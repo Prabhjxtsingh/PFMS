@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <ul>
+            <li><a href="#"><span class="emoji">🏠</span><span class="label">Home</span></a></li>
+            <li><a href="#"><span class="emoji">📊</span><span class="label">Overview</span></a></li>
+            <li><a href="#"><span class="emoji">💸</span><span class="label">Outcome Categories</span></a></li>
+            <li><a href="#"><span class="emoji">💰</span><span class="label">Income Categories</span></a></li>
+            <li><a href="#"><span class="emoji">📈</span><span class="label">Balance History</span></a></li>
+        </ul>
+        
+        <!-- Settings Section with Dropdown -->
+        <div class="settings-section">
+            <div class="settings-dropdown">
+                <button class="settings-button"><span class="emoji">⚙️</span><span class="label">Settings</span></button>
+                <div class="dropdown-content">
+                    <a href="index.html" class="logout"><span class="emoji">🚪</span> Logout</a>
+                    <a href="#" onclick="toggleTheme()"><span class="emoji">🌞/🌙</span> Toggle Theme</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard Content -->
+    <div class="main-content">
+        <div class="section-box">
+            <h2 class="dashboard-title">Hello, User!</h2>
+            <div class="dashboard-overview">
+                <div class="overview-card">
+                    <p>Current Month: <span>+ $729</span></p>
+                    <p>Total Balance: <span>$51,213</span></p>
+                    <p>Current Expenses: <span>- $372</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-box">
+            <div class="dashboard-charts">
+                <div class="chart-container">
+                    <h3>Outcome Categories</h3>
+                    <canvas id="outcomeChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Income Categories</h3>
+                    <canvas id="incomeChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Balance History</h3>
+                    <canvas id="balanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js"></script>
+    <script>
+        // JavaScript for theme toggle
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+        }
+
+        // Toggle dropdown visibility
+        document.querySelector(".settings-button").onclick = function(event) {
+            event.stopPropagation(); // Prevent click from closing the dropdown immediately
+            document.querySelector(".dropdown-content").classList.toggle("show");
+        };
+
+        // Close dropdown when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.settings-button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].classList.remove('show');
+                }
+            }
+        };
+
+        // Close dropdown if sidebar collapses
+        document.getElementById("sidebar").addEventListener("mouseleave", function() {
+            var dropdown = document.querySelector(".dropdown-content");
+            if (dropdown.classList.contains("show")) {
+                dropdown.classList.remove("show");
+            }
+        });
+    </script>
+</body>
+</html>

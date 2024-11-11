@@ -1,0 +1,149 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #0B1120; /* Dark background color */
+    color: #ffffff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #0B1120;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.logo-icon {
+    color: #7dd3fc; /* Accent color for logo */
+    font-size: 1.2rem;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    margin-left: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* About Section */
+.about-section {
+    padding: 50px;
+    background-color: #1f2937; /* Darker background for contrast */
+    text-align: center;
+}
+
+.about-section h1 {
+    color: #a3e635; /* Light green for heading */
+}
+
+.mission, .vision {
+    background-color: #0B1120;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mission h2, .vision h2 {
+    color: #3b82f6; /* Accent color for subheadings */
+}
+
+.mission p, .vision p {
+    color: #e2e8f0; /* Light grey for text */
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background-color: #0B1120;
+    color: #ffffff;
+    text-align: center;
+    padding: 18px;
+}
+
+.footer a {
+    color: #7dd3fc; /* Accent color */
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 40px;
+    background-color: #001f3f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-left {
+    flex: 1;
+}
+
+.contact-left h2 {
+    font-size: 24px;
+    color: #a8ff9f;
+}
+
+.contact-left p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.contact-center {
+    flex: 1;
+    text-align: center;
+}
+
+.contact-center address {
+    font-style: normal;
+    color: #e2e8f0;
+}
+
+.contact-right {
+    flex: 1;
+    text-align: right;
+}
+
+.contact-right a {
+    color: #a8ff9f;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+.contact-right a:hover {
+    text-decoration: underline;
+}
+
+.star {
+    color: #a8ff9f;
+}
